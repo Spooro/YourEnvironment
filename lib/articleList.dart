@@ -6,19 +6,19 @@ class ArticleListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
-        itemCount: ArticleList.length,
+        itemCount: articleList.length,
         separatorBuilder: (context, index) {
           return SizedBox(height: 10);
         },
         itemBuilder: (BuildContext context, int index) {
-          return ListViewCard(ArticleList[index]);
+          return ListViewCard(articleList[index]);
         });
   }
 }
 
 class ArticleScreen extends StatelessWidget {
   ArticleScreen(this.article);
-  Article article;
+  final Article article;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

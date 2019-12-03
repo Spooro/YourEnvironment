@@ -6,19 +6,19 @@ class GuideListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
-        itemCount: ArticleList.length,
+        itemCount: articleList.length,
         separatorBuilder: (context, index) {
           return SizedBox(height: 10);
         },
         itemBuilder: (BuildContext context, int index) {
-          return ListViewCard(GuideList[index]);
+          return ListViewCard(guideList[index]);
         });
   }
 }
 
 class GuideScreen extends StatelessWidget {
   GuideScreen(this.guide);
-  Guide guide;
+  final Guide guide;
 
   @override
   Widget build(BuildContext context) {

@@ -16,7 +16,7 @@ List titles = ["Обустройство двора", "Вовлечение", "�
 var title = 0;
 
 class _MyAppState extends State<MyApp> {
-  int _page = 0;
+  
   void navigationTapped(int page) {
     _pageController.jumpToPage(page);
     setState(() {
@@ -38,7 +38,7 @@ class _MyAppState extends State<MyApp> {
 
   void onPageChanged(int page) {
     setState(() {
-      _page = page;
+     
       title = page;
     });
   }
@@ -86,10 +86,10 @@ class _MyAppState extends State<MyApp> {
 }
 
 class CustomListTile extends StatefulWidget {
-  IconData icon;
-  int index;
-  String text;
-  Function ontap;
+  final IconData icon;
+  final int index;
+  final String text;
+  final Function ontap;
   CustomListTile(
     this.icon,
     this.text,

@@ -7,7 +7,7 @@ import 'data.dart';
 class ListViewCard extends StatelessWidget {
   ListViewCard(this.page);
 
-  var page;
+  final page;
   @override
   Widget build(BuildContext context) {
     return Card(
