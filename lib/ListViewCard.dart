@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:your_environment/guideList.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 import 'articleList.dart';
 import 'data.dart';
@@ -11,11 +12,9 @@ class ListViewCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-    
       semanticContainer: true,
       clipBehavior: Clip.antiAliasWithSaveLayer,
       child: InkWell(
-        
         onTap: () {
           // тап на карточку
           page is Guide
@@ -29,18 +28,20 @@ class ListViewCard extends StatelessWidget {
         child: Container(
           height: 140,
           width: 185,
-          child: Hero(
-            tag: page.name,
-            child: Stack(
+          child: Hero(tag: page.name,
+                      child: Stack(
               fit: StackFit.expand,
               children: <Widget>[
-                page is Guide?
-                Image(
+                CachedNetworkImage(
                   fit: BoxFit.cover,
-                  image: NetworkImage(
-                    page.picture,
+                  errorWidget: (context, url, error) => Icon(Icons.error),
+                  imageUrl: page.picture,
+                  placeholder: (context, url) => Container(
+                    child: Center(
+                      child: CircularProgressIndicator(),
+                    ),
                   ),
-                ):Container(),
+                ),
                 Positioned(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:your_environment/articleList.dart';
 import 'package:your_environment/slovar.dart';
 import 'guideList.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 void main() => runApp(MyApp());
 
@@ -16,7 +17,6 @@ List titles = ["Обустройство двора", "Вовлечение", "�
 var title = 0;
 
 class _MyAppState extends State<MyApp> {
-  
   void navigationTapped(int page) {
     _pageController.jumpToPage(page);
     setState(() {
@@ -38,7 +38,6 @@ class _MyAppState extends State<MyApp> {
 
   void onPageChanged(int page) {
     setState(() {
-     
       title = page;
     });
   }
@@ -60,9 +59,12 @@ class _MyAppState extends State<MyApp> {
                 child: Container(),
                 margin: EdgeInsets.only(bottom: 0),
                 decoration: BoxDecoration(
-                    image: DecorationImage(fit: BoxFit.cover,
-                        image: NetworkImage(
-                            "https://sun9-46.userapi.com/c856120/v856120793/189f10/hMRl14w-LAQ.jpg"))),
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: CachedNetworkImageProvider(
+                        "https://sun9-46.userapi.com/c856120/v856120793/189f10/hMRl14w-LAQ.jpg"),
+                  ),
+                ),
               ),
               CustomListTile(Icons.book, titles[0], () {}, 0),
               CustomListTile(Icons.library_books, titles[1], () {}, 1),
@@ -74,11 +76,7 @@ class _MyAppState extends State<MyApp> {
           physics: NeverScrollableScrollPhysics(),
           controller: _pageController,
           onPageChanged: onPageChanged,
-          children: <Widget>[
-            GuideListView(),
-            ArticleListView(),
-            Slovar()
-          ],
+          children: <Widget>[GuideListView(), ArticleListView(), Slovar()],
         ),
       ),
     );
