@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:your_environment/articleList.dart';
-import 'package:your_environment/slovar.dart';
-import 'guideList.dart';
+import 'package:your_environment/articleListScreen.dart';
+import 'package:your_environment/slovarListScreen.dart';
+import 'guideListScreen.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
 void main() => runApp(MyApp());
@@ -21,7 +21,7 @@ class _MyAppState extends State<MyApp> {
     _pageController.jumpToPage(page);
     setState(() {
       title = page;
-    });
+    },);
   }
 
   @override
@@ -76,7 +76,7 @@ class _MyAppState extends State<MyApp> {
           physics: NeverScrollableScrollPhysics(),
           controller: _pageController,
           onPageChanged: onPageChanged,
-          children: <Widget>[GuideListView(), ArticleListView(), Slovar()],
+          children: <Widget>[GuideListView(), ArticleListView(), SlovarListView()],
         ),
       ),
     );
@@ -128,7 +128,7 @@ class _CustomListTileState extends State<CustomListTile> {
                       widget.text,
                       style: TextStyle(fontSize: 19),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),

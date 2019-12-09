@@ -113,7 +113,7 @@ List<Guide> guideList = [
 
 class Slovarnoe {
   Slovarnoe(
-      @required this.name, @required this.definition, @required this.picture);
+      {@required this.name, @required this.definition, @required this.picture});
 
   final String name;
   final String picture;
@@ -121,13 +121,11 @@ class Slovarnoe {
 }
 
 List<Slovarnoe> slovarnieList = [
-  Slovarnoe("Двор", "там, где подъезд", 'ddd'),
-  Slovarnoe("Двор", "там, где подъезд", 'ddd'),
-  Slovarnoe("Двор", "там, где подъезд", 'ddd'),
-  Slovarnoe("Двор", "там, где подъезд", 'ddd'),
-  Slovarnoe("Двор", "там, где подъезд", 'ddd'),
-  Slovarnoe("Двор", "там, где подъезд", 'ddd'),
-  Slovarnoe("Двор", "там, где подъезд", 'ddd'),
-  Slovarnoe("Двор", "там, где подъезд", 'ddd'),
-  Slovarnoe("Двор", "там, где подъезд", 'ddd'),
+  Slovarnoe(name: "aggjbjbkjha", definition: "skdfdsjfk", picture: "https://sun9-16.userapi.com/c854520/v854520031/16859b/7PTquj4iwOc.jpg"),
+  Slovarnoe(name: "aa", definition: "skdfdsjfk", picture: "https://sun9-16.userapi.com/c854520/v854520031/16859b/7PTquj4iwOc.jpg"),
+  Slovarnoe(name: "aa", definition: "skdfdsjfk", picture: "https://sun9-16.userapi.com/c854520/v854520031/16859b/7PTquj4iwOc.jpg"),
+  Slovarnoe(name: "aa", definition: "skdfdsjfk", picture: "https://sun9-16.userapi.com/c854520/v854520031/16859b/7PTquj4iwOc.jpg"),
+  Slovarnoe(name: "aa", definition: "skdfdsjfk", picture: "https://sun9-16.userapi.com/c854520/v854520031/16859b/7PTquj4iwOc.jpg"),
+  Slovarnoe(name: "aa", definition: "skdfdsjfk", picture: "https://sun9-16.userapi.com/c854520/v854520031/16859b/7PTquj4iwOc.jpg"),
+  Slovarnoe(name: "aa", definition: "skdfdsjfk", picture: "https://sun9-16.userapi.com/c854520/v854520031/16859b/7PTquj4iwOc.jpg"),
 ];

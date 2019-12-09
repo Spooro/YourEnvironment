@@ -1,44 +1,44 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:your_environment/ListViewCard.dart';
 import 'data.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 
-class GuideListView extends StatelessWidget {
+class ArticleListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
-        itemCount: guideList.length,
+        itemCount: articleList.length,
         separatorBuilder: (context, index) {
           return SizedBox(height: 10);
         },
         itemBuilder: (BuildContext context, int index) {
-          return ListViewCard(guideList[index]);
+          return ListViewCard(articleList[index]);
         });
   }
 }
 
-class GuideScreen extends StatelessWidget {
-  GuideScreen(this.guide);
-  final Guide guide;
+class ArticleScreen extends StatelessWidget {
+  ArticleScreen(this.article);
+  final Article article;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(guide.name),
+        title: Text(article.name),
       ),
       body: ListView(
         children: <Widget>[
           Container(
             height: 200,
             child: Hero(
-              tag: guide.name,
+              tag: article.name,
               child: Stack(
                 fit: StackFit.expand,
                 children: <Widget>[
                   CachedNetworkImage(
                     errorWidget: (context, url, error) => Icon(Icons.error),
-                    imageUrl: guide.picture,
+                    imageUrl: article.picture,
                     fit: BoxFit.cover,
                     placeholder: (context, url) => Container(
                       child: Center(
@@ -51,17 +51,19 @@ class GuideScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text(
-                          guide.name,
+                          article.name,
                           style: Theme.of(context).textTheme.title.copyWith(
                                 fontSize: 40,
                                 fontWeight: FontWeight.normal,
+                                color: Colors.black
                               ),
                         ),
                         Text(
-                          guide.overview,
+                          article.overview,
                           style: Theme.of(context).textTheme.title.copyWith(
                                 fontSize: 20,
                                 fontWeight: FontWeight.normal,
+                                color: Colors.black
                               ),
                         ),
                       ],
@@ -75,10 +77,11 @@ class GuideScreen extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(top: 10, bottom: 17, left: 10, right: 10),
-            child: Text(guide.body, style: TextStyle(fontSize: 20),),
+            child: Text(article.body, style: TextStyle(fontSize: 20),),
           )
         ],
       ),
     );
   }
 }
+

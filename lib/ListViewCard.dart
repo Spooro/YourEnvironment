@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:your_environment/guideList.dart';
+import 'package:your_environment/guideListScreen.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
-import 'articleList.dart';
+import 'articleListScreen.dart';
 import 'data.dart';
 
 class ListViewCard extends StatelessWidget {
@@ -28,8 +28,9 @@ class ListViewCard extends StatelessWidget {
         child: Container(
           height: 140,
           width: 185,
-          child: Hero(tag: page.name,
-                      child: Stack(
+          child: Hero(
+            tag: page.name,
+            child: Stack(
               fit: StackFit.expand,
               children: <Widget>[
                 CachedNetworkImage(
@@ -48,17 +49,31 @@ class ListViewCard extends StatelessWidget {
                     children: <Widget>[
                       Text(
                         page.name,
-                        style: Theme.of(context).textTheme.title.copyWith(
-                              fontSize: 40,
-                              fontWeight: FontWeight.normal,
-                            ),
+                        style: page is Article
+                            ? Theme.of(context).textTheme.title.copyWith(
+                                  fontSize: 40,
+                                  fontWeight: FontWeight.normal,
+                                  color: Colors.black
+                                )
+                            : Theme.of(context).textTheme.title.copyWith(
+                                  fontSize: 40,
+                                  fontWeight: FontWeight.normal,
+                                  
+                                ),
                       ),
                       Text(
                         page.overview,
-                        style: Theme.of(context).textTheme.title.copyWith(
-                              fontSize: 20,
-                              fontWeight: FontWeight.normal,
-                            ),
+                        style: page is Article
+                            ? Theme.of(context).textTheme.title.copyWith(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.normal,
+                                  color: Colors.black
+                                )
+                            : Theme.of(context).textTheme.title.copyWith(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.normal,
+                                  
+                                ),
                       ),
                     ],
                   ),
