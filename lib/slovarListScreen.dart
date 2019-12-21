@@ -26,11 +26,10 @@ class SlovarnoeCard extends StatelessWidget {
             context: context,
             builder: (BuildContext context) {
               return Dialog(
-                
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30)),
                 child: Container(
-                  height: 128,
+                  height: 170,
                   width: 290,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
@@ -41,22 +40,6 @@ class SlovarnoeCard extends StatelessWidget {
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Padding(
-                          padding: const EdgeInsets.only(right: 8.0),
-                          child: Container(
-                            height: 100,
-                            width: 100,
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                fit: BoxFit.cover,
-                                image: CachedNetworkImageProvider(slovarnoe.picture),
-                              ),
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(14.0),
-                              ),
-                            ),
-                          ),
-                        ),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
@@ -68,10 +51,11 @@ class SlovarnoeCard extends StatelessWidget {
                                       .textTheme
                                       .title
                                       .copyWith(
-                                        fontSize: 28,
+                                        fontSize: 24,
                                         fontWeight: FontWeight.normal,
                                       ),
-                                )),
+                                )), 
+                                SizedBox(height: 2,),
                             Text(slovarnoe.definition)
                           ],
                         )

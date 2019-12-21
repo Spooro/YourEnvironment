@@ -56,7 +56,7 @@ class ListViewCard extends StatelessWidget {
                                   color: Colors.black
                                 )
                             : Theme.of(context).textTheme.title.copyWith(
-                                  fontSize: 40,
+                                  fontSize: 28,
                                   fontWeight: FontWeight.normal,
                                   
                                 ),
@@ -70,7 +70,7 @@ class ListViewCard extends StatelessWidget {
                                   color: Colors.black
                                 )
                             : Theme.of(context).textTheme.title.copyWith(
-                                  fontSize: 20,
+                                  fontSize: 17,
                                   fontWeight: FontWeight.normal,
                                   
                                 ),
